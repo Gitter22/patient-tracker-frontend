@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,7 +68,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
 # patient-tracker-frontend
 App for tracking patients treatment for a private fitness practitioner or physiotherapist
->>>>>>> bc78eaa9054530aa1430ddef1701a4cdd573c2ab
