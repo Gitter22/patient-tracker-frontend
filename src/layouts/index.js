@@ -7,7 +7,7 @@ import {
     FundOutlined,
     CalendarOutlined
 } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
+import { Breadcrumb, Layout, Menu, theme, Typography } from 'antd';
 import { Outlet, useNavigate } from 'react-router-dom';
 
 const { Header, Sider, Content } = Layout;
@@ -23,8 +23,46 @@ const App = () => {
     const handleSideMenuClick = (e) => {
         console.log(e)
         navigate(`/${e.key}`)
-        setHeader(e.label)
+        setHeader(items.find(item => item.key === e.key).label)
     }
+
+    const items = [
+        {
+            key: 'calender',
+            icon: <CalendarOutlined />,
+            label: 'Calender',
+        },
+        {
+            key: 'patients',
+            icon: <UserOutlined />,
+            label: 'Patients',
+        },
+        {
+            key: 'diets',
+            icon: <UserOutlined />,
+            label: 'Diets',
+        },
+        {
+            key: 'exercises',
+            icon: <UserOutlined />,
+            label: 'Exercises',
+        },
+        {
+            key: 'plans',
+            icon: <UserOutlined />,
+            label: 'Plans',
+        },
+        {
+            key: 'payments',
+            icon: <FundOutlined />,
+            label: 'Payments',
+        },
+        {
+            key: 'inquiries',
+            icon: <PhoneOutlined />,
+            label: 'Inquiries',
+        },
+    ]
 
     return (
         <Layout>
@@ -37,59 +75,23 @@ const App = () => {
                     mode="inline"
                     defaultSelectedKeys={['1']}
                     onClick={handleSideMenuClick}
-                    items={[
-                        {
-                            key: 'calender',
-                            icon: <CalendarOutlined />,
-                            label: 'Calender',
-                        },
-                        {
-                            key: 'patients',
-                            icon: <UserOutlined />,
-                            label: 'Patients',
-                        },
-                        {
-                            key: 'diets',
-                            icon: <UserOutlined />,
-                            label: 'Diets',
-                        },
-                        {
-                            key: 'Exercises',
-                            icon: <UserOutlined />,
-                            label: 'Exercises',
-                        },
-                        {
-                            key: 'treatment-plans',
-                            icon: <UserOutlined />,
-                            label: 'Treatment Plans',
-                        },
-                        {
-                            key: 'payments',
-                            icon: <FundOutlined />,
-                            label: 'Payments',
-                        },
-                        {
-                            key: 'inquiries',
-                            icon: <PhoneOutlined />,
-                            label: 'Inquiries',
-                        },
-                    ]}
+                    items={items}
                 />
             </Sider>
             <Layout className="site-layout">
-                <Header style={{ padding: 0, background: colorBgContainer }}>
+                <Header style={{ padding: 16, background: colorBgContainer }}>
                     {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                         className: 'trigger',
                         onClick: () => setCollapsed(!collapsed),
                     })}
-                    {header}
                 </Header>
+
                 <Content
                     style={{
                         margin: '24px 16px',
                         padding: 24,
                         minHeight: "88vh",
-                        background: colorBgContainer,
+                        // background: colorBgContainer,
                     }}
                 >
                     <Outlet />

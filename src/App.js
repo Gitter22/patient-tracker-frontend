@@ -6,13 +6,15 @@ import { Provider } from 'react-redux';
 import store from './store'
 import AuthGuard from './features/auth/AuthGuard';
 import Welcome from './features/static/Welcome';
-import Patients from './features/patients'
+import PatientList from './features/patients/PatientList'
+import PatientView from './features/patients/PatientView';
 import Payments from './features/payments'
-import Inquiries from './features/inquiries'
+import InquiryList from './features/inquiries/InquiryList';
+import InquiryView from './features/inquiries/InquiryView';
 import Calender from './features/calender';
 import Diets from './features/diets';
 import Exercises from './features/exercises';
-import TreatmentPlans from './features/treatment-plans';
+import Plans from './features/plans';
 function App() {
   return (
     // <Provider>
@@ -21,12 +23,18 @@ function App() {
         <Route path='/' element={<AuthGuard><AppLayout /></AuthGuard>}>
           <Route index element={<Welcome />} />
           <Route path='/calender' element={<Calender />} />
-          <Route path='/patients' element={<Patients />} />
+
+          <Route path='/patients' element={<PatientList />} />
+          <Route path='/patients/:id' element={<PatientView />} />
+
           <Route path='/diets' element={<Diets />} />
+
           <Route path='/exercises' element={<Exercises />} />
-          <Route path='/treatment-plans' element={<TreatmentPlans />} />
+          <Route path='/plans' element={<Plans />} />
           <Route path='/payments' element={<Payments />} />
-          <Route path='/inquiries' element={<Inquiries />} />
+
+          <Route path='/inquiries' element={<InquiryList />} />
+          <Route path='/inquiries/:id' element={<InquiryView />} />
 
         </Route>
       </Routes>
