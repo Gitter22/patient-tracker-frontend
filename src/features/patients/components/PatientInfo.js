@@ -16,7 +16,7 @@ const { Text, Link, Title } = Typography
 
 const PatientInfo = () => {
     return (
-        <Card >
+        <Card title='Basic details' >
             <div style={{ display: "flex", alignItems: "center", paddingLeft: 12 }}>
                 <Title level={2} >Aadil Shaikh</Title>
                 <Tag color='success'>Active</Tag>

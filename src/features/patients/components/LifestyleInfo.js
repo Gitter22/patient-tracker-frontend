@@ -1,6 +1,5 @@
 import React from 'react'
 import { Card, Divider, Space, Tag, Typography } from 'antd'
-import ReactSpeedometer from "react-d3-speedometer"
 import UserInjured from '../../../svg/UserInjured'
 import Meal from '../../../svg/Meal'
 import HandHoldingMedical from '../../../svg/HandHoldingMedical'
@@ -10,13 +9,13 @@ import ThumbsDown from '../../../svg/ThumbsDown'
 import Notes from '../../../svg/Notes'
 import CardDescription from '../../../components/CardDescription'
 
+const { Text, Link, Title } = Typography
 
 
 
 const LifestyleInfo = () => {
     return (
-        <Card >
-            {/* <Title level={3} style={{ marginBottom: 5, marginLeft: 10 }}>LifeStyle and Health </Title> */}
+        <Card title='LifeStyle and Health'>
             <div style={{ display: 'flex' }}>
                 <div style={{ flex: '50%' }}>
                     <CardDescription

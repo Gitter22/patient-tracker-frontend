@@ -3,13 +3,13 @@ import React from 'react'
 import LifestyleInfo from './LifestyleInfo'
 import MiniCalender from './MiniCalender'
 import PatientInfo from './PatientInfo'
-import PlanAndSessionInfo from './PlanAndSessionInfo'
+import TreatmentStatus from './TreatmentStatus'
 
 
 const OverviewTab = () => {
     return (
         <>
-            <Row gutter={[16, 24]} align='stretch'>
+            <Row gutter={[16, 24]}>
                 <Col span={12}>
                     <PatientInfo />
                 </Col>
@@ -19,7 +19,7 @@ const OverviewTab = () => {
             </Row>
             <Row gutter={[16, 24]}>
                 <Col span={12}>
-                    <PlanAndSessionInfo />
+                    <TreatmentStatus />
                 </Col>
                 <Col span={12}>
                     <MiniCalender />

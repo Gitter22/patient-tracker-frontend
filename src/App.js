@@ -2,7 +2,7 @@ import './App.css';
 import 'antd/dist/reset.css';
 import AppLayout from './layouts'
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Provider } from 'redux'
 import store from './store'
 import AuthGuard from './features/auth/AuthGuard';
 import Welcome from './features/static/Welcome';
