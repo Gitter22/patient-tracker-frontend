@@ -1,0 +1,97 @@
+.ant-layout .date-box {
+    background: #ffffff;
+    box-shadow: 0px 6px 4px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 5px 48px 5px 10px;
+    border: 2px solid #ffffff;
+    position: relative;
+    cursor: pointer;
+}
+
+.ant-layout .date-box.active {
+    background: #fef3e9;
+    border: 2px solid #df6025;
+}
+
+.content-date-slider .swiper-container {
+    display: flex;
+}
+
+.content-date-slider .swiper-container .swiper-button-next,
+.content-date-slider .swiper-container .swiper-button-prev {
+    height: 100% !important;
+    background-color: #ffffff !important;
+    width: 50px !important;
+    border-radius: 10px !important;
+}
+
+.content-date-slider .swiper-container .swiper-button-next {
+    margin: 0 0 0 10px !important;
+    right: 0 !important;
+}
+
+.content-date-slider .swiper-container .swiper-button-prev {
+    margin: 0 10px 0 0 !important;
+    left: 0 !important;
+}
+
+.content-date-slider .swiper-container .swiper-wrapper {
+    order: 2;
+    max-width: calc(100% - 120px);
+}
+
+.content-date-slider .swiper-container {
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0 -60px;
+}
+
+.content-date-slider .swiper-slide {
+    width: auto;
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1 !important;
+}
+
+.ant-layout .date-box h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    color: #474747;
+}
+
+.ant-layout .date-box h3 span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #474747;
+}
+
+.ant-layout .date-box h6 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    color: #474747;
+    margin: 0;
+}
+
+.ant-layout .date-box .available-shift-no {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    background: #df6025;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 32px;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+    border-radius: 30px;
+}

@@ -1,26 +1,37 @@
-import { Space, Typography } from 'antd'
+import { Col, Row, Space, Typography } from 'antd'
 import React from 'react'
-
-const containerstyle = { display: "flex", justifyContent: "space-between" }
+import Box from './Box'
+import styles from './pageheader.module.css'
+const containerstyle = {
+    padding: '16px 8px',
+    // margin: '8px 0px',
+    boxSizing: 'border-box'
+}
 const titlestyle = { margin: 0, display: "inline-block" }
-const extracontainerstyle = { display: "flex" }
 
 const PageHeader = ({ title, level = 3, extra }) => {
     return (
-        <div style={containerstyle}>
-            <div>
-                <Space>
-                    {/* <Button>Back</Button> */}
-                    <Typography.Title level={level} style={titlestyle}>{title}</Typography.Title>
-                </Space>
-            </div>
-            <div style={extracontainerstyle}>
-                <Space>
-                    {extra}
-                </Space>
-
-            </div>
-        </div>
+        <Box
+            classname={styles.header}
+            style={containerstyle}
+        >
+            <Row justify='space-between' >
+                <Col>
+                    <Typography.Title
+                        level={level}
+                        style={titlestyle}
+                    >
+                        {title}
+                    </Typography.Title>
+                </Col>
+                <Col
+                >
+                    <Space align='end'>
+                        {extra}
+                    </Space>
+                </Col>
+            </Row>
+        </Box >
     )
 }
 

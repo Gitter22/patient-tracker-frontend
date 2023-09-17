@@ -65,7 +65,11 @@ const App = () => {
     ]
 
     return (
-        <Layout>
+        <Layout
+            style={{
+                minHeight: "100vh",
+            }}
+        >
             <Sider trigger={null} collapsible collapsed={collapsed}>
                 <div style={{ color: "white", padding: "15px" }}>
                     Patient Tracker logo
@@ -78,26 +82,20 @@ const App = () => {
                     items={items}
                 />
             </Sider>
-            <Layout className="site-layout">
-                <Header style={{ padding: 16, background: colorBgContainer }}>
+            <Layout
+                className="site-layout"
+            >
+                {/* <Header style={{ padding: 16, background: colorBgContainer }}>
                     {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                         className: 'trigger',
                         onClick: () => setCollapsed(!collapsed),
                     })}
-                </Header>
-
-                <Content
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        minHeight: "88vh",
-                        // background: colorBgContainer,
-                    }}
-                >
+                </Header> */}
+                <Content>
                     <Outlet />
                 </Content>
             </Layout>
-        </Layout>
+        </Layout >
     );
 };
 
