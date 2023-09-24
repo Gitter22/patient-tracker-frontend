@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Tabs, Typography } from 'antd'
-import OverviewTab from './components/OverviewTab'
+import OverviewTab from './components/Overview/OverviewTab'
 import SessionsTab from './components/Sessions/SessionsTab'
 import BiometricsTab from './components/BiometricsTab'
 import DietTrackerTab from './components/DietTrackerTab'
@@ -9,6 +9,7 @@ import LogsTab from './components/LogsTab'
 import PageHeader from '../../components/PageHeader'
 import Box from '../../components/Box'
 
+const { WhiteBox } = Box
 
 const PatientView = () => {
 
@@ -28,7 +29,6 @@ const PatientView = () => {
                 style={{
                     padding: '8px 8px',
                     margin: '8px',
-                    backgroundColor: ''
                 }}>
                 <Tabs
                     tabBarStyle={{ margin: '8px 0px', backgroundColor: '#fff' }}

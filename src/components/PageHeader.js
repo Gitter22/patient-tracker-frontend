@@ -2,6 +2,8 @@ import { Col, Row, Space, Typography } from 'antd'
 import React from 'react'
 import Box from './Box'
 import styles from './pageheader.module.css'
+
+const { WhiteBox } = Box
 const containerstyle = {
     padding: '16px 8px',
     // margin: '8px 0px',
@@ -11,7 +13,7 @@ const titlestyle = { margin: 0, display: "inline-block" }
 
 const PageHeader = ({ title, level = 3, extra }) => {
     return (
-        <Box
+        <WhiteBox
             classname={styles.header}
             style={containerstyle}
         >
@@ -31,7 +33,7 @@ const PageHeader = ({ title, level = 3, extra }) => {
                     </Space>
                 </Col>
             </Row>
-        </Box >
+        </WhiteBox >
     )
 }
 

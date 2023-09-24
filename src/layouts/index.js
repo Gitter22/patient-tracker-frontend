@@ -85,12 +85,12 @@ const App = () => {
             <Layout
                 className="site-layout"
             >
-                {/* <Header style={{ padding: 16, background: colorBgContainer }}>
+                <Header style={{ padding: 16, background: colorBgContainer }}>
                     {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                         className: 'trigger',
                         onClick: () => setCollapsed(!collapsed),
                     })}
-                </Header> */}
+                </Header>
                 <Content>
                     <Outlet />
                 </Content>

@@ -1,18 +1,32 @@
 import React from 'react'
 import { Layout } from 'antd';
 
-const { Content: AntContent } = Layout;
+const { Content } = Layout;
 
 const Box = ({ children, style }) => {
     return (
-        <AntContent style={{
-            backgroundColor: '#fff',
+        <Content style={{
             boxSizing: 'border-box',
             ...style
         }}>
             {children}
-        </AntContent>
+        </Content>
     )
 }
+
+
+const White = ({ children, style }) => {
+    return (
+        <Box style={{ backgroundColor: '#fff', ...style }}>
+            {children}
+        </Box>
+    )
+}
+
+
+
+
+
+Box.WhiteBox = White
 
 export default Box
