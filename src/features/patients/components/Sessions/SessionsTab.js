@@ -1,15 +1,17 @@
 import React from 'react'
-import { Avatar, Button, Card, Col, Divider, List, Row, Space, Statistic, Table, Tag, Typography } from 'antd';
+import { Avatar, Button, Col, Divider, List, Row, Select, Space, Statistic, Table, Tag, Typography } from 'antd';
 import dayjs from 'dayjs';
 import Content from '../../../../components/Box';
 import CardDescription from '../../../../components/CardDescription';
 import FaceFrown from '../../../../svg/FaceFrown';
 import Stethoscope from '../../../../svg/Stethoscope';
+import Card from '../../../../components/Card';
+import Box from '../../../../components/Box';
 
 
 const { Title } = Typography
 
-const { Meta } = Card
+
 
 const columns = [
     {
@@ -24,7 +26,7 @@ const columns = [
         key: 'sets',
     },
     {
-        title: 'Reps',
+        title: 'Reps/Count',
         dataIndex: 'reps',
         key: 'reps',
     },
@@ -44,9 +46,9 @@ const columns = [
         key: 'distance',
     },
     {
-        title: 'Count',
-        dataIndex: 'count',
-        key: 'count',
+        title: 'Notes',
+        dataIndex: 'notes',
+        key: 'notes',
     },
 ];
 const data = [
@@ -58,7 +60,7 @@ const data = [
         weight: 15,
         duration: 30,
         distance: 3.5,
-        count: 0
+        notes: 'Take 30 minutes break betwen sets'
 
     },
     {
@@ -69,7 +71,7 @@ const data = [
         weight: 23,
         duration: 30,
         distance: 3.5,
-        count: 0
+        notes: 'Take 30 minutes break betwen sets'
     },
     {
         key: '3',
@@ -79,17 +81,17 @@ const data = [
         weight: 15,
         duration: 19,
         distance: 5,
-        count: 15
+        notes: 'Take 30 minutes break betwen sets'
     },
     {
-        key: '3',
+        key: '4',
         title: 'Clamshell',
         sets: 3,
         reps: 12,
         weight: 15,
         duration: 19,
         distance: 5,
-        count: 15
+        notes: 'Take 30 minutes break betwen sets'
     },
 ];
 
@@ -97,6 +99,7 @@ const scheduleHistoryColumns = [
     {
         title: 'Schedule Date',
         key: 'date',
+        width: 200,
         render: (record) => {
             const sessionDate = dayjs(record.startTime).format("DD MMM YY")
             const startTime = dayjs(record.startTime).format("HH:mm")
@@ -109,6 +112,7 @@ const scheduleHistoryColumns = [
         }
     },
     {
+        width: 150,
         title: 'Scheduled By',
         dataIndex: 'scheduledBy',
         key: 'scheduledBy',
@@ -153,56 +157,58 @@ const scheduleData = [
 
 const SessionList = () => {
     return (
-        <ul style={{ listStyle: 'none', margin: "0px", padding: "0px" }}>
-            <li style={{ marginBottom: "8px", padding: "0px" }}>
-                <SessionItem
-                    sessionSequenceId={6}
-                    startTime={'2023-03-29T19:30:00'}
-                    endTime={'2023-03-29T20:00:00'}
-                    status='pending'
-                />
-            </li>
-            <li style={{ marginBottom: "8px" }}>
-                <SessionItem
-                    sessionSequenceId={5}
-                    startTime={'2023-03-27T19:30:00'}
-                    endTime={'2023-03-27T20:15:00'}
-                    status='pending'
-                />
-            </li>
-            <li style={{ marginBottom: "8px" }}>
-                <SessionItem
-                    sessionSequenceId={4}
-                    startTime={'2023-03-25T20:30:00'}
-                    endTime={'2023-03-25T21:30:00'}
-                    status='pending'
-                />
-            </li>
-            <li style={{ marginBottom: "8px" }}>
-                <SessionItem
-                    sessionSequenceId={3}
-                    startTime={'2023-03-23T19:30:00'}
-                    endTime={'2023-03-23T20:00:00'}
-                    status='ongoing'
-                />
-            </li>
-            <li style={{ marginBottom: "8px" }}>
-                <SessionItem
-                    sessionSequenceId={2}
-                    startTime={'2023-03-21T19:30:00'}
-                    endTime={'2023-03-21T20:15:00'}
-                    status='canceled'
-                />
-            </li>
-            <li style={{ marginBottom: "8px" }}>
-                <SessionItem
-                    sessionSequenceId={1}
-                    startTime={'2023-03-19T20:30:00'}
-                    endTime={'2023-03-19T21:30:00'}
-                    status='completed'
-                />
-            </li>
-        </ul>
+        <Box.WhiteBox style={{ boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', height: 'calc(100vh - 222px)', overflowY: 'auto' }}>
+            <ul style={{ listStyle: 'none', margin: "0px", padding: "0px" }}>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={6}
+                        startTime={'2023-03-29T19:30:00'}
+                        endTime={'2023-03-29T20:00:00'}
+                        status='pending'
+                    />
+                </li>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={5}
+                        startTime={'2023-03-27T19:30:00'}
+                        endTime={'2023-03-27T20:15:00'}
+                        status='pending'
+                    />
+                </li>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={4}
+                        startTime={'2023-03-25T20:30:00'}
+                        endTime={'2023-03-25T21:30:00'}
+                        status='pending'
+                    />
+                </li>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={3}
+                        startTime={'2023-03-23T19:30:00'}
+                        endTime={'2023-03-23T20:00:00'}
+                        status='ongoing'
+                    />
+                </li>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={2}
+                        startTime={'2023-03-21T19:30:00'}
+                        endTime={'2023-03-21T20:15:00'}
+                        status='canceled'
+                    />
+                </li>
+                <li>
+                    <SessionItem
+                        sessionSequenceId={1}
+                        startTime={'2023-03-19T20:30:00'}
+                        endTime={'2023-03-19T21:30:00'}
+                        status='completed'
+                    />
+                </li>
+            </ul>
+        </Box.WhiteBox >
     )
 }
 
@@ -236,108 +242,104 @@ const SessionItem = ({ sessionSequenceId, startTime, endTime, status }) => {
         //         <span>{`${dayjs(startTime).format("HH:mm")} - ${dayjs(endTime).format("HH:mm")}`}</span>
         //     </div>
         // </div>
-
-        <Row gutter={16} >
-            <Col span={24}>
-                <Card>
-                    <Meta
-                        style={{
-                            padding: 0,
-                            margin: 0
-                        }}
-                        avatar={<Avatar
-                            shape="square"
-                            size={64}
-                            style={{
-                                backgroundColor: statusColor(status),
-                                color: '#fff',
-                            }}
-                            gap={1}
-                        >
-                            {sessionSequenceId}
-                        </Avatar>}
-                        title={dayjs(startTime).format("DD MMM YYYY")}
-                        description={`${dayjs(startTime).format("HH:mm")} - ${dayjs(endTime).format("HH:mm")}`}
-                    />
-                </Card>
-            </Col>
-        </Row>
+        <Box style={{ display: 'flex', padding: '9px 15px', }}>
+            <div>
+                <Avatar
+                    shape="square"
+                    size={48}
+                    style={{
+                        backgroundColor: statusColor(status),
+                        fontWeight: 400,
+                        fontSize: 24,
+                        marginRight: 9
+                    }}
+                    gap={0}
+                >
+                    {sessionSequenceId}
+                </Avatar>
+            </div>
+            <div>
+                <Typography.Title level={5} style={{ margin: '0px 0px' }}>{dayjs(startTime).format("DD MMM YYYY")}</Typography.Title>
+                <Typography.Text level={5} type='secondary' style={{ margin: '0px 0px' }}>{`${dayjs(startTime).format("HH:mm")} - ${dayjs(endTime).format("HH:mm")}`}</Typography.Text>
+            </div>
+        </Box >
     )
 }
 
 const SessionDetail = () => {
     return (
         <>
-            <Row gutter={[16, 16]}>
-                <Col span={24}>
-                    <Card>
-                        <Meta
-                            avatar={<Avatar
+            <Card style={{ height: 'calc(100vh - 222px)', overflowY: 'auto' }}>
+                <Row gutter={[16, 16]}>
+                    <Box style={{ display: 'flex', }}>
+                        <div>
+                            <Avatar
                                 shape="square"
                                 size={64}
                                 style={{
-                                    backgroundColor: '#fde3cf',
-                                    color: '#f56a00',
+                                    backgroundColor: '#1677ff',
+                                    fontWeight: 400,
+                                    fontSize: 24,
+                                    marginRight: 9
                                 }}
+                                gap={0}
                             >
                                 {3}
-                            </Avatar>}
-                            title={'23 March 2023'}
-                            description={`07:30pm - 09:30pm`}
+                            </Avatar>
+                        </div>
+                        <div>
+                            <Typography.Title level={3} style={{ margin: '0px 0px' }}>23 March 2023</Typography.Title>
+                            <Typography.Title level={5} type='secondary' style={{ margin: '0px 0px' }}>07:30pm - 09:30pm</Typography.Title>
+                        </div>
+                    </Box >
+                    <Divider style={{ margin: 0 }} />
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col span={6}>
+                        <CardDescription
+                            title='Status'
+                            description='Completed'
                         />
-                    </Card>
-                </Col>
-            </Row>
-            <Row gutter={[16, 16]}>
-                <Col span={6}>
-                    <CardDescription
-                        title='Status'
-                        // icon={<FaceFrown />}
-                        description='Completed'
-                    />
-                </Col>
+                    </Col>
 
-                <Col span={6}>
-                    <CardDescription
-                        title='Type'
-                        // icon={<FaceFrown />}
-                        description='Regular'
-                    />
-                </Col>
-                <Col span={6}>
-                    <CardDescription
-                        title='Mode'
-                        // icon={<FaceFrown />}
-                        description='Online'
-                    />
-                </Col>
-                <Col span={6}>
-                    <CardDescription
-                        title='Conducted By'
-                        // icon={<FaceFrown />}
-                        description='Dr. Zuber Shaikh'
-                    />
-                </Col>
-            </Row>
-            <Row gutter={[16, 16]}>
-                <Col span={24}>
-                    <CardDescription
-                        title='Complaints'
-                        icon={<FaceFrown />}
-                        description='Extreme pain in lower back, difficulty in getting standing back'
-                    />
-                </Col>
-            </Row>
-            <Row gutter={[16, 16]}>
-                <Col span={24}>
-                    <CardDescription
-                        title='Assessment'
-                        icon={<Stethoscope />}
-                        description=' Weak muscles, inactivity, weak core. Need strength training for atleast 6 months'
-                    />
-                </Col>
-            </Row>
-            {/* <Row gutter={[16, 16]}>
+                    <Col span={6}>
+                        <CardDescription
+                            title='Type'
+                            description='Regular'
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <CardDescription
+                            title='Mode'
+                            description='Online'
+                        />
+                    </Col>
+                    <Col span={6}>
+                        <CardDescription
+                            title='Conducted By'
+                            description='Dr. Zuber Shaikh'
+                        />
+                    </Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col span={24}>
+                        <CardDescription
+                            title='Complaints'
+                            icon={<FaceFrown />}
+                            description='Extreme pain in lower back, difficulty in getting standing back'
+                        />
+                    </Col>
+                </Row>
+                <Row gutter={[16, 16]}>
+                    <Col span={24}>
+                        <CardDescription
+                            title='Assessment'
+                            icon={<Stethoscope />}
+                            description=' Weak muscles, inactivity, weak core. Need strength training for atleast 6 months'
+                        />
+                    </Col>
+                </Row>
+                {/* <Row gutter={[16, 16]}>
                 <Col span={12}>
                     <CardDescription
                         title='Reason for Cancellation'
@@ -346,30 +348,31 @@ const SessionDetail = () => {
                     />
                 </Col>
             </Row> */}
-            <Row>
-                <Col span={24}>
-                    {/* <Divider>Exercises</Divider> */}
-                    < Card title='Exercise' >
+                <Row gutter={[0, 16]}>
+                    <Col span={24}>
+                        {/* <Divider orientation='left'>Exercises</Divider> */}
+                        <Divider />
+
+                        {/* <Title level={5}>Exercises</Title> */}
                         <Table
                             columns={columns}
                             dataSource={data}
                             pagination={false}
                         />
-                    </Card >
-                </Col>
-            </Row >
-            <Row>
-                <Col span={24}>
-                    {/* <Divider>Schedule History</Divider> */}
-                    < Card title='Schedule History' >
+                    </Col>
+                    <Divider />
+                </Row>
+                <Row>
+                    <Col span={24}>
+                        <Title level={5}>Schedule History</Title>
                         <Table
                             columns={scheduleHistoryColumns}
                             dataSource={scheduleData}
                             pagination={true}
                         />
-                    </Card >
-                </Col>
-            </Row >
+                    </Col>
+                </Row >
+            </Card>
         </>
     )
 }
@@ -377,11 +380,11 @@ const SessionDetail = () => {
 const SessionsTab = () => {
     return (
         <Content >
-            <Row>
-                <Col xl={6}>
+            <Row gutter={[8]}>
+                <Col xl={4}>
                     <SessionList />
                 </Col>
-                <Col xl={18}>
+                <Col xl={20}>
                     <SessionDetail />
                 </Col>
             </Row >

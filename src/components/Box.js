@@ -3,12 +3,12 @@ import { Layout } from 'antd';
 
 const { Content } = Layout;
 
-const Box = ({ children, style }) => {
+const Box = ({ children, style, props }) => {
     return (
         <Content style={{
             boxSizing: 'border-box',
             ...style
-        }}>
+        }} {...props}>
             {children}
         </Content>
     )
