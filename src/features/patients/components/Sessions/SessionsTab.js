@@ -155,58 +155,100 @@ const scheduleData = [
     },
 ];
 
+const sessionList = [
+    {
+        sessionSequenceId: 12,
+        startTime: '2023-03-29T19:30:00',
+        endTime: '2023-03-29T20:00:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 11,
+        startTime: '2023-03-27T19:30:00',
+        endTime: '2023-03-27T20:15:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 10,
+        startTime: '2023-03-25T20:30:00',
+        endTime: '2023-03-25T21:30:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 9,
+        startTime: '2023-03-23T19:30:00',
+        endTime: '2023-03-23T20:00:00',
+        status: 'ongoing',
+    },
+    {
+
+        sessionSequenceId: 8,
+        startTime: '2023-03-21T19:30:00',
+        endTime: '2023-03-21T20:15:00',
+        status: 'canceled',
+    },
+    {
+        sessionSequenceId: 7,
+        startTime: '2023-03-19T20:30:00',
+        endTime: '2023-03-19T21:30:00',
+        status: 'completed',
+    },
+    {
+        sessionSequenceId: 6,
+        startTime: '2023-03-29T19:30:00',
+        endTime: '2023-03-29T20:00:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 5,
+        startTime: '2023-03-27T19:30:00',
+        endTime: '2023-03-27T20:15:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 4,
+        startTime: '2023-03-25T20:30:00',
+        endTime: '2023-03-25T21:30:00',
+        status: 'pending',
+    },
+    {
+
+        sessionSequenceId: 3,
+        startTime: '2023-03-23T19:30:00',
+        endTime: '2023-03-23T20:00:00',
+        status: 'ongoing',
+    },
+    {
+
+        sessionSequenceId: 2,
+        startTime: '2023-03-21T19:30:00',
+        endTime: '2023-03-21T20:15:00',
+        status: 'canceled',
+    },
+    {
+        sessionSequenceId: 1,
+        startTime: '2023-03-19T20:30:00',
+        endTime: '2023-03-19T21:30:00',
+        status: 'completed',
+    },]
+
 const SessionList = () => {
     return (
         <Box.WhiteBox style={{ boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)', height: 'calc(100vh - 222px)', overflowY: 'auto' }}>
             <ul style={{ listStyle: 'none', margin: "0px", padding: "0px" }}>
-                <li>
+                {sessionList.map((session, index) => <li style={{ cursor: 'pointer' }} key={index}>
                     <SessionItem
-                        sessionSequenceId={6}
-                        startTime={'2023-03-29T19:30:00'}
-                        endTime={'2023-03-29T20:00:00'}
-                        status='pending'
+                        sessionSequenceId={session.sessionSequenceId}
+                        startTime={session.startTime}
+                        endTime={session.endTime}
+                        status={session.status}
                     />
-                </li>
-                <li>
-                    <SessionItem
-                        sessionSequenceId={5}
-                        startTime={'2023-03-27T19:30:00'}
-                        endTime={'2023-03-27T20:15:00'}
-                        status='pending'
-                    />
-                </li>
-                <li>
-                    <SessionItem
-                        sessionSequenceId={4}
-                        startTime={'2023-03-25T20:30:00'}
-                        endTime={'2023-03-25T21:30:00'}
-                        status='pending'
-                    />
-                </li>
-                <li>
-                    <SessionItem
-                        sessionSequenceId={3}
-                        startTime={'2023-03-23T19:30:00'}
-                        endTime={'2023-03-23T20:00:00'}
-                        status='ongoing'
-                    />
-                </li>
-                <li>
-                    <SessionItem
-                        sessionSequenceId={2}
-                        startTime={'2023-03-21T19:30:00'}
-                        endTime={'2023-03-21T20:15:00'}
-                        status='canceled'
-                    />
-                </li>
-                <li>
-                    <SessionItem
-                        sessionSequenceId={1}
-                        startTime={'2023-03-19T20:30:00'}
-                        endTime={'2023-03-19T21:30:00'}
-                        status='completed'
-                    />
-                </li>
+                </li>)}
             </ul>
         </Box.WhiteBox >
     )

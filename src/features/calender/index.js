@@ -111,8 +111,9 @@ const Calender = () => {
                 // events={myEventsList}
                 startAccessor="start"
                 endAccessor="end"
-                style={{ height: 500 }} */}
-            />
+                style={{ height: 500 }} 
+                />
+                */}
         </>
     )
 }
